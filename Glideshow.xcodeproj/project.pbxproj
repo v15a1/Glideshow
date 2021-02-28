@@ -16,6 +16,8 @@
 		4B073A1025EB56D2003FF9C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B073A0E25EB56D2003FF9C1 /* Main.storyboard */; };
 		4B073A1225EB56D3003FF9C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B073A1125EB56D3003FF9C1 /* Assets.xcassets */; };
 		4B073A1525EB56D3003FF9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B073A1325EB56D3003FF9C1 /* LaunchScreen.storyboard */; };
+		4B073A1E25EB5955003FF9C1 /* Glideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B073A1D25EB5955003FF9C1 /* Glideshow.swift */; };
+		4B0CF40425EB760D005975B1 /* GlideLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CF40325EB760D005975B1 /* GlideLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		4B073A1125EB56D3003FF9C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B073A1425EB56D3003FF9C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B073A1625EB56D3003FF9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B073A1D25EB5955003FF9C1 /* Glideshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glideshow.swift; sourceTree = "<group>"; };
+		4B0CF40325EB760D005975B1 /* GlideLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlideLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				4B0739E925EB56BD003FF9C1 /* Glideshow.h */,
 				4B0739EA25EB56BD003FF9C1 /* Info.plist */,
+				4B073A1D25EB5955003FF9C1 /* Glideshow.swift */,
+				4B0CF40325EB760D005975B1 /* GlideLabel.swift */,
 			);
 			path = Glideshow;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 				TargetAttributes = {
 					4B0739E525EB56BD003FF9C1 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					4B0739EE25EB56BD003FF9C1 = {
 						CreatedOnToolsVersion = 12.4;
@@ -262,6 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B0CF40425EB760D005975B1 /* GlideLabel.swift in Sources */,
+				4B073A1E25EB5955003FF9C1 /* Glideshow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +447,7 @@
 		4B0739FB25EB56BD003FF9C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FVZ5PWG6VV;
@@ -454,6 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.visal.lk.Glideshow;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -462,6 +473,7 @@
 		4B0739FC25EB56BD003FF9C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FVZ5PWG6VV;
@@ -486,6 +498,7 @@
 		4B0739FE25EB56BD003FF9C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FVZ5PWG6VV;
 				INFOPLIST_FILE = GlideshowTests/Info.plist;
@@ -504,6 +517,7 @@
 		4B0739FF25EB56BD003FF9C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FVZ5PWG6VV;
 				INFOPLIST_FILE = GlideshowTests/Info.plist;
