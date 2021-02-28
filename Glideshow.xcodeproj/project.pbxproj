@@ -18,6 +18,7 @@
 		4B073A1525EB56D3003FF9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B073A1325EB56D3003FF9C1 /* LaunchScreen.storyboard */; };
 		4B073A1E25EB5955003FF9C1 /* Glideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B073A1D25EB5955003FF9C1 /* Glideshow.swift */; };
 		4B0CF40425EB760D005975B1 /* GlideLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CF40325EB760D005975B1 /* GlideLabel.swift */; };
+		4B0CF40925EB76BD005975B1 /* GlideItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CF40825EB76BD005975B1 /* GlideItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		4B073A1625EB56D3003FF9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B073A1D25EB5955003FF9C1 /* Glideshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glideshow.swift; sourceTree = "<group>"; };
 		4B0CF40325EB760D005975B1 /* GlideLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlideLabel.swift; sourceTree = "<group>"; };
+		4B0CF40825EB76BD005975B1 /* GlideItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlideItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				4B0739EA25EB56BD003FF9C1 /* Info.plist */,
 				4B073A1D25EB5955003FF9C1 /* Glideshow.swift */,
 				4B0CF40325EB760D005975B1 /* GlideLabel.swift */,
+				4B0CF40825EB76BD005975B1 /* GlideItem.swift */,
 			);
 			path = Glideshow;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B0CF40425EB760D005975B1 /* GlideLabel.swift in Sources */,
+				4B0CF40925EB76BD005975B1 /* GlideItem.swift in Sources */,
 				4B073A1E25EB5955003FF9C1 /* Glideshow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
