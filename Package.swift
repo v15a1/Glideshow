@@ -17,7 +17,7 @@ let package = Package(
     targets: [
         .target(
             name: "Glideshow",
-            dependencies: []),
+            path : "Glideshow"),
         .testTarget(
             name: "GlideshowTests",
             dependencies: ["Glideshow"]),
