@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "ce014d18-4d82-11ea-b5b5-0a586475cf58_wolt_cupid_6k_v01.psd.banner psb.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

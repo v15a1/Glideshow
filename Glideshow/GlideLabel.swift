@@ -16,7 +16,11 @@ class GlideLabel: UILabel {
     /// - Parameter withMaxWidth: Maximum allocatable width
     /// - Returns: Maximum occupying height of the GlideLabel text
     func getHeight(withMaxWidth :CGFloat) -> CGFloat {
-        self.frame = CGRect(x: 0, y: 0, width: withMaxWidth, height: CGFloat.greatestFiniteMagnitude)
+        self.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: withMaxWidth,
+            height: CGFloat.greatestFiniteMagnitude)
         self.numberOfLines = 0
         self.lineBreakMode = NSLineBreakMode.byWordWrapping
         self.sizeToFit()

@@ -19,6 +19,9 @@
 		4B073A1E25EB5955003FF9C1 /* Glideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B073A1D25EB5955003FF9C1 /* Glideshow.swift */; };
 		4B0CF40425EB760D005975B1 /* GlideLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CF40325EB760D005975B1 /* GlideLabel.swift */; };
 		4B0CF40925EB76BD005975B1 /* GlideItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CF40825EB76BD005975B1 /* GlideItem.swift */; };
+		4B0CF40E25EBD50F005975B1 /* Glideshow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0739E625EB56BD003FF9C1 /* Glideshow.framework */; };
+		4B0CF40F25EBD50F005975B1 /* Glideshow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0739E625EB56BD003FF9C1 /* Glideshow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B0CF41A25EBD590005975B1 /* GlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CF41925EBD590005975B1 /* GlideCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +32,28 @@
 			remoteGlobalIDString = 4B0739E525EB56BD003FF9C1;
 			remoteInfo = Glideshow;
 		};
+		4B0CF41025EBD50F005975B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B0739DD25EB56BD003FF9C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B0739E525EB56BD003FF9C1;
+			remoteInfo = Glideshow;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4B0CF41225EBD50F005975B1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4B0CF40F25EBD50F005975B1 /* Glideshow.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4B0739E625EB56BD003FF9C1 /* Glideshow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Glideshow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +73,7 @@
 		4B073A1D25EB5955003FF9C1 /* Glideshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glideshow.swift; sourceTree = "<group>"; };
 		4B0CF40325EB760D005975B1 /* GlideLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlideLabel.swift; sourceTree = "<group>"; };
 		4B0CF40825EB76BD005975B1 /* GlideItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlideItem.swift; sourceTree = "<group>"; };
+		4B0CF41925EBD590005975B1 /* GlideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlideCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B0CF40E25EBD50F005975B1 /* Glideshow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +110,7 @@
 				4B0739F325EB56BD003FF9C1 /* GlideshowTests */,
 				4B073A0725EB56D2003FF9C1 /* GlideshowExample */,
 				4B0739E725EB56BD003FF9C1 /* Products */,
+				4B0CF40D25EBD50F005975B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +130,7 @@
 				4B0739E925EB56BD003FF9C1 /* Glideshow.h */,
 				4B0739EA25EB56BD003FF9C1 /* Info.plist */,
 				4B073A1D25EB5955003FF9C1 /* Glideshow.swift */,
+				4B0CF41925EBD590005975B1 /* GlideCell.swift */,
 				4B0CF40325EB760D005975B1 /* GlideLabel.swift */,
 				4B0CF40825EB76BD005975B1 /* GlideItem.swift */,
 			);
@@ -130,6 +158,13 @@
 				4B073A1625EB56D3003FF9C1 /* Info.plist */,
 			);
 			path = GlideshowExample;
+			sourceTree = "<group>";
+		};
+		4B0CF40D25EBD50F005975B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,10 +224,12 @@
 				4B073A0225EB56D1003FF9C1 /* Sources */,
 				4B073A0325EB56D1003FF9C1 /* Frameworks */,
 				4B073A0425EB56D1003FF9C1 /* Resources */,
+				4B0CF41225EBD50F005975B1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4B0CF41125EBD50F005975B1 /* PBXTargetDependency */,
 			);
 			name = GlideshowExample;
 			productName = GlideshowExample;
@@ -275,6 +312,7 @@
 				4B0CF40425EB760D005975B1 /* GlideLabel.swift in Sources */,
 				4B0CF40925EB76BD005975B1 /* GlideItem.swift in Sources */,
 				4B073A1E25EB5955003FF9C1 /* Glideshow.swift in Sources */,
+				4B0CF41A25EBD590005975B1 /* GlideCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +341,11 @@
 			isa = PBXTargetDependency;
 			target = 4B0739E525EB56BD003FF9C1 /* Glideshow */;
 			targetProxy = 4B0739F125EB56BD003FF9C1 /* PBXContainerItemProxy */;
+		};
+		4B0CF41125EBD50F005975B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B0739E525EB56BD003FF9C1 /* Glideshow */;
+			targetProxy = 4B0CF41025EBD50F005975B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -460,6 +503,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Glideshow/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,6 +530,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Glideshow/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,6 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FVZ5PWG6VV;
 				INFOPLIST_FILE = GlideshowExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -564,6 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FVZ5PWG6VV;
 				INFOPLIST_FILE = GlideshowExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
