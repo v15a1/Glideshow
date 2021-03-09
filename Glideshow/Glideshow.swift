@@ -102,6 +102,8 @@ public class Glideshow: UIView {
     /// Default slide color
     public var defaultSlideColor : UIColor = UIColor.lightGray
     
+    public var placeHolderImage : UIImage?
+    
     /// Spacing between `SlideLabels` embedded in the slide
     public var labelSpacing : CGFloat = 8
     
@@ -401,7 +403,6 @@ public class Glideshow: UIView {
             
             collectionView?.frame = self.bounds
         case .bottom:
-            print("bottom")
             slideMargin.bottom = 10
             collectionView?.frame = CGRect(x: 0, y: 0, width: width, height: self.frame.height - 10)
             pageIndicator!.frame = CGRect(x: 0, y: self.frame.height - 10, width: width, height: 10)
@@ -497,10 +498,10 @@ extension Glideshow : UICollectionViewDelegate, UICollectionViewDataSource, UICo
         }
         /// Cell setup for passed `GlideItems`
         if let item = items?[indexPath.item % (items?.count ?? 0)] {
-            cell.caption = item.caption
-            cell.title = item.title
-            cell.story = item.description
-            cell.backgroundImage = item.backgroundImage
+            cell.configure(
+                with: item,
+                placeholderImage: placeHolderImage
+            )
         }
         
         return cell

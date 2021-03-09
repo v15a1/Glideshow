@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 //MARK: Protocol - GlideableCellDelegate
 /// Protocol to inform cell about scroll state
@@ -54,30 +55,6 @@ class GlideCell: UICollectionViewCell {
     
     // Protocol variable to hide/show labels based on value
     public var isProminent: Bool = true
-        
-    /// Value of the slide title
-    public var title : String? {
-        didSet{
-            slideTitle.text = title
-            layoutSubviews()
-        }
-    }
-    
-    /// Value of the slide description
-    public var story : String?{
-        didSet{
-            slideDescription.text = story
-            layoutSubviews()
-        }
-    }
-    
-    /// Value of the slide caption
-    public var caption : String?{
-        didSet{
-            slideCaption.text = caption
-            layoutSubviews()
-        }
-    }
     
     /// Sets up slide background image if image is available
     public var backgroundImage : UIImage? {
@@ -199,6 +176,8 @@ class GlideCell: UICollectionViewCell {
     
     /// Maximum width of a GlideLabel. Calculated using leading inset of cell
     private var animateableMaxWidth : CGFloat!
+    
+    private var cancellable : AnyCancellable?
         
     public override func awakeFromNib() {
         super.awakeFromNib()
@@ -213,6 +192,14 @@ class GlideCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         initialize()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        if backgroundImage != nil {
+            imageView.image = nil
+        }
+        cancellable?.cancel()
     }
     
     public override func layoutSubviews() {
@@ -232,6 +219,46 @@ class GlideCell: UICollectionViewCell {
         slide.backgroundColor = .clear
         slide.clipsToBounds = true
     }
+    
+    /// Configures cell
+    /// - Parameter item: `GlideItem` to configure cell with
+    public func configure( with item : GlideItem, placeholderImage : UIImage?){
+        slideCaption.text = item.caption
+        slideTitle.text = item.title
+        slideDescription.text = item.description
+        if let bgImage = item.backgroundImage{
+            backgroundImage = bgImage
+        }else{
+            backgroundImage = placeholderImage
+            cancellable = loadImage(for: item).sink{
+                [weak self] image in self?.showNetworkImage(for: image)
+            }
+        }
+        layoutIfNeeded()
+    }
+    
+    
+    /// Displays retrieved image
+    /// - Parameter image: Image to display
+    private func showNetworkImage(for image : UIImage?) {
+        UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                    self.backgroundImage = image
+        }, completion: nil)
+    }
+    
+    
+    /// Caches loaded image
+    /// - Parameter item: `GlideItem` to retrieve URL
+    /// - Returns: Returns `Just` publisher with the cached image if any.
+    private func loadImage(for item: GlideItem) -> AnyPublisher<UIImage?, Never> {
+        return Just(item.imgURL)
+         .flatMap({ poster -> AnyPublisher<UIImage?, Never> in
+            let url = URL(string: item.imgURL ?? "")!
+             return ImageLoader.shared.loadImage(from: url)
+         })
+         .eraseToAnyPublisher()
+     }
+
     
     /// Setup Description, Title, Caption in stated order by positioning based on each Glidelabels content
     private func setupAnimateables(){

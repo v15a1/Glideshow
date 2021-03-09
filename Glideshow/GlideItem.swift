@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class GlideItem {
+public struct GlideItem {
     
     /// Caption of the slide
     public var caption : String!
@@ -20,6 +20,8 @@ public class GlideItem {
     
     /// Asset image for slide background
     public var backgroundImage : UIImage?
+    
+    public var imgURL : String?
     
     /// Initializer for GlideItem
     ///
@@ -38,5 +40,24 @@ public class GlideItem {
         self.title = title
         self.description = description
         self.backgroundImage = backgroundImage
+    }
+    
+    /// Initializer for GlideItem
+    ///
+    /// - Parameters:
+    ///   - caption: Caption of the slide
+    ///   - title: Title of the slide
+    ///   - description: Description of the slide
+    ///   - imageURL: Image URL to load
+    public init(
+        caption : String! = nil,
+        title : String! = nil,
+        description : String! = nil,
+        imageURL : String! = nil
+    ){
+        self.caption = caption
+        self.title = title
+        self.description = description
+        self.imgURL = imageURL
     }
 }

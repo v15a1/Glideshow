@@ -22,6 +22,8 @@
 		4B0CF40E25EBD50F005975B1 /* Glideshow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0739E625EB56BD003FF9C1 /* Glideshow.framework */; };
 		4B0CF40F25EBD50F005975B1 /* Glideshow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0739E625EB56BD003FF9C1 /* Glideshow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B0CF41A25EBD590005975B1 /* GlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CF41925EBD590005975B1 /* GlideCell.swift */; };
+		4B3447F525F7CD6D00A713F2 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3447F425F7CD6D00A713F2 /* ImageCache.swift */; };
+		4BB22DFB25F7D35800B6FD9D /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB22DFA25F7D35800B6FD9D /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		4B0CF40325EB760D005975B1 /* GlideLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlideLabel.swift; sourceTree = "<group>"; };
 		4B0CF40825EB76BD005975B1 /* GlideItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlideItem.swift; sourceTree = "<group>"; };
 		4B0CF41925EBD590005975B1 /* GlideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlideCell.swift; sourceTree = "<group>"; };
+		4B3447F425F7CD6D00A713F2 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		4BB22DFA25F7D35800B6FD9D /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				4B0739EA25EB56BD003FF9C1 /* Info.plist */,
 				4B073A1D25EB5955003FF9C1 /* Glideshow.swift */,
 				4B0CF41925EBD590005975B1 /* GlideCell.swift */,
+				4B3447F425F7CD6D00A713F2 /* ImageCache.swift */,
+				4BB22DFA25F7D35800B6FD9D /* ImageLoader.swift */,
 				4B0CF40325EB760D005975B1 /* GlideLabel.swift */,
 				4B0CF40825EB76BD005975B1 /* GlideItem.swift */,
 			);
@@ -309,7 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB22DFB25F7D35800B6FD9D /* ImageLoader.swift in Sources */,
 				4B0CF40425EB760D005975B1 /* GlideLabel.swift in Sources */,
+				4B3447F525F7CD6D00A713F2 /* ImageCache.swift in Sources */,
 				4B0CF40925EB76BD005975B1 /* GlideItem.swift in Sources */,
 				4B073A1E25EB5955003FF9C1 /* Glideshow.swift in Sources */,
 				4B0CF41A25EBD590005975B1 /* GlideCell.swift in Sources */,

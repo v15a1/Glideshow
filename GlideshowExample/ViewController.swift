@@ -29,19 +29,21 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         glideshow.items = [
-            GlideItem(caption : "Привет", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", backgroundImage: #imageLiteral(resourceName: "d42fdbf73868af1f844b88a30617f9d7")),
-            GlideItem(caption : "Hello in Japanese",title : "こんにちは", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", backgroundImage: #imageLiteral(resourceName: "0805fe161e1e1089d916c9286696d5eb")),
-            GlideItem(caption : "Hello in Chinese",title : "你好", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", backgroundImage: #imageLiteral(resourceName: "42b5b97f3a2dea3b4a860b7786f628ad")),
-            GlideItem(caption : "Hello in Thai",title : "สวัสดี", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.", backgroundImage: #imageLiteral(resourceName: "1ad7f0c78859a871347dd732cfd2b76e"))
+            GlideItem(caption : "Привет", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", imageURL: "https://picsum.photos/1080/720"),
+            GlideItem(caption : "Hello in Japanese",title : "こんにちは", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", backgroundImage: #imageLiteral(resourceName: "image10")),
+            GlideItem(caption : "Hello in Chinese",title : "你好", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", backgroundImage: #imageLiteral(resourceName: "image7")),
+            GlideItem(caption : "Hello in Thai",title : "สวัสดี", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.", backgroundImage: #imageLiteral(resourceName: "image9"))
         ]
         glideshow.isCircular = true
+        glideshow.placeHolderImage = #imageLiteral(resourceName: "placeholder")
         glideshow.gradientColor =
             UIColor.black.withAlphaComponent(0.8)
         glideshow.captionFont = UIFont.systemFont(ofSize: 16, weight: .light)
         glideshow.titleFont = UIFont.systemFont(ofSize: 30, weight: .black)
         glideshow.gradientHeightFactor = 0.8
         glideshow.pageIndicatorPosition = .bottom
-        glideshow.interval = 2
+        glideshow.interval = 5
+        
         button.setTitle("Go to item number 3", for: .normal)
         button.addTarget(self, action: #selector(goToSlide), for: .touchUpInside)
         
