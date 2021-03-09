@@ -69,9 +69,9 @@ The behaviour is configurable by the following properties
 | `titleColor` | Sets the `textColor` of the slide title |
 | `descriptionColor` | Sets the `textColor` of the slide description |
 | `captionColor` | Sets the `textColor` of the slide slide caption |
-| `titleGlideFactor` | Configures the speed of the transition of the title label ( Default 3 ) |
+| `titleGlideFactor` | Configures the speed of the transition of the title label ( Default 2 ) |
 | `descriptionGlideFactor` | Configures the speed of the transition of the description label ( Default 3 ) |
-| `captionGlideFactor` | Configures the speed of the transition of the caption label ( Default 3 ) |
+| `captionGlideFactor` | Configures the speed of the transition of the caption label ( Default 1 ) |
 | `pageIndicatorPosition` | Configures positon of the pge indicator |
 | `placeHolderImage` | Configures slide background placeholder if a URL is specified, else `nil` |
 
