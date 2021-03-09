@@ -3,7 +3,7 @@
 ![Frame 3](https://user-images.githubusercontent.com/46480892/110459021-74813d80-80f2-11eb-8dcf-620489289431.png)
 
 # Glideshow
-[![Generic badge](https://img.shields.io/badge/Swift-5.3-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/iOS-13.0-blue.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/Version-1.0.0-orange.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/platform-ios-green.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Swift-5.3-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/iOS-13.0-blue.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/Version-1.1.1-orange.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/platform-ios-green.svg)](https://shields.io/)
 
 A slideshow with *pizzazz!* Glideshow adds transitions to the slideshows labels to set it apart from conventional slideshows
 
@@ -42,6 +42,8 @@ glideshow.items = [
     GlideItem(description: "General Kenobi!", backgroundImage: UIImage(named:  "image2")),
     GlideItem(title : "Hello there", backgroundImage: UIImage(named:  "image3")),
     GlideItem(title : "Hello there", description: "General Kenobi!")
+    // Network images
+    GlideItem(caption : "Hello there", description: "General Kenobi!", imageURL: "[ IMAGE URL ]")
 ]
 
 ```
@@ -71,10 +73,11 @@ The behaviour is configurable by the following properties
 | `descriptionGlideFactor` | Configures the speed of the transition of the description label ( Default 3 ) |
 | `captionGlideFactor` | Configures the speed of the transition of the caption label ( Default 3 ) |
 | `pageIndicatorPosition` | Configures positon of the pge indicator |
+| `placeHolderImage` | Configures slide background placeholder if a URL is specified, else `nil` |
 
 ### Work in Progress
 
-* Support for Network images
-* Multiple animations
+- [x] Support for Network images
+- [ ] Multiple animations
 
 
