@@ -91,7 +91,6 @@ class GlideCell: UICollectionViewCell {
     /// Slide caption GlideLabel
     public var slideCaption : GlideLabel = {
         let label = GlideLabel()
-        label.glideFactor = 1
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.numberOfLines = 0
@@ -102,7 +101,6 @@ class GlideCell: UICollectionViewCell {
     /// Slide title GlideLabel
     public var slideTitle : GlideLabel = {
         let label = GlideLabel()
-        label.glideFactor = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .black)
         label.textColor = .white
@@ -113,7 +111,6 @@ class GlideCell: UICollectionViewCell {
     /// Slide description GlideLabel
     public var slideDescription : GlideLabel = {
         let label = GlideLabel()
-        label.glideFactor = 3
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.numberOfLines = 0

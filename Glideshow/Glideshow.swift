@@ -111,6 +111,15 @@ public class Glideshow: UIView {
     /// Slide title font
     public var titleFont : UIFont? = UIFont.systemFont(ofSize: 20, weight: .black)
     
+    /// Glide factor of the slide description
+    public var descriptionGlideFactor : CGFloat = 3
+    
+    /// Glide factor of the slide title
+    public var titleGlideFactor : CGFloat = 2
+    
+    /// Glide factor of the slide description
+    public var captionGlideFactor : CGFloat = 1
+    
     /// Slide desctription font
     public var descriptionFont : UIFont? =  UIFont.systemFont(ofSize: 16, weight: .regular)
     
@@ -147,6 +156,7 @@ public class Glideshow: UIView {
     /// Page indicator
     public var pageIndicator : UIPageControl? {
         didSet{
+            setPagesForIndicator()
             setPageIndicatorIfNeeded()
         }
     }
@@ -155,24 +165,6 @@ public class Glideshow: UIView {
     public var pageIndicatorPosition : PageIndicatorPosition = .hidden{
         didSet{
             setPageIndicatorIfNeeded()
-        }
-    }
-    
-    /// Color of the page indictor of the selected page
-    var currentPageIndicatorTint : UIColor = UIColor.darkGray {
-        didSet {
-            if pageIndicator != nil {
-                pageIndicator?.currentPageIndicatorTintColor = currentPageIndicatorTint
-            }
-        }
-    }
-    
-    /// Color of the page indictor of all pages
-    var pageIndicatorTintColor : UIColor = UIColor.lightGray {
-        didSet {
-            if pageIndicator != nil {
-                pageIndicator?.pageIndicatorTintColor = pageIndicatorTintColor
-            }
         }
     }
     
@@ -277,8 +269,8 @@ public class Glideshow: UIView {
         
         if pageIndicator == nil {
             pageIndicator = UIPageControl()
-            pageIndicator?.pageIndicatorTintColor = pageIndicatorTintColor
-            pageIndicator?.currentPageIndicatorTintColor = currentPageIndicatorTint
+            pageIndicator?.pageIndicatorTintColor = UIColor.lightGray
+            pageIndicator?.currentPageIndicatorTintColor = UIColor.darkGray
             self.addSubview(pageIndicator!)
         }
         
@@ -396,17 +388,20 @@ public class Glideshow: UIView {
     
     /// setting number of pages, current page for the page control
     fileprivate func setPagesForIndicator(){
+        if items == nil { return }
         pageIndicator?.numberOfPages = items!.count
         pageIndicator?.currentPage = pageByMidSection
     }
     
     fileprivate func setPageIndicatorIfNeeded(){
-        guard self.width != nil else { return }
+        if self.width == nil { return }
         
         switch pageIndicatorPosition {
         case .hidden:
+            
             collectionView?.frame = self.bounds
         case .bottom:
+            print("bottom")
             slideMargin.bottom = 10
             collectionView?.frame = CGRect(x: 0, y: 0, width: width, height: self.frame.height - 10)
             pageIndicator!.frame = CGRect(x: 0, y: self.frame.height - 10, width: width, height: 10)
@@ -487,6 +482,9 @@ extension Glideshow : UICollectionViewDelegate, UICollectionViewDataSource, UICo
         cell.slideTitle.textColor = titleColor
         cell.slideDescription.textColor = descriptionColor
         cell.slideCaption.textColor = captionColor
+        cell.slideTitle.glideFactor = titleGlideFactor
+        cell.slideDescription.glideFactor = descriptionGlideFactor
+        cell.slideCaption.glideFactor = captionGlideFactor
         cell.labelSpacing = labelSpacing
         cell.slide.backgroundColor = defaultSlideColor
         // layout
