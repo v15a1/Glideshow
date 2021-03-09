@@ -177,7 +177,8 @@ class GlideCell: UICollectionViewCell {
     /// Maximum width of a GlideLabel. Calculated using leading inset of cell
     private var animateableMaxWidth : CGFloat!
     
-    private var cancellable : AnyCancellable?
+    @available(iOS 13, *)
+    private lazy var cancellable : AnyCancellable? = nil
         
     public override func awakeFromNib() {
         super.awakeFromNib()
@@ -199,7 +200,11 @@ class GlideCell: UICollectionViewCell {
         if backgroundImage != nil {
             imageView.image = nil
         }
-        cancellable?.cancel()
+        if #available(iOS 13, *) {
+            cancellable?.cancel()
+        } else {
+            return
+        }
     }
     
     public override func layoutSubviews() {
@@ -230,8 +235,13 @@ class GlideCell: UICollectionViewCell {
             backgroundImage = bgImage
         }else{
             backgroundImage = placeholderImage
-            cancellable = loadImage(for: item).sink{
-                [weak self] image in self?.showNetworkImage(for: image)
+
+            if #available(iOS 13.0, *) {
+                cancellable = loadImage(for: item).sink{
+                    [weak self] image in self?.showNetworkImage(for: image)
+                }
+            } else {
+                imageView.loadImage(urlString: item.imgURL!)
             }
         }
         layoutIfNeeded()
@@ -250,6 +260,7 @@ class GlideCell: UICollectionViewCell {
     /// Caches loaded image
     /// - Parameter item: `GlideItem` to retrieve URL
     /// - Returns: Returns `Just` publisher with the cached image if any.
+    @available(iOS 13.0, *)
     private func loadImage(for item: GlideItem) -> AnyPublisher<UIImage?, Never> {
         return Just(item.imgURL)
          .flatMap({ poster -> AnyPublisher<UIImage?, Never> in
