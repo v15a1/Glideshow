@@ -5,7 +5,7 @@
 # Glideshow
 [![Generic badge](https://img.shields.io/badge/Swift-5.3-orange.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/iOS-13.0-blue.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/Version-1.1.1-orange.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/platform-ios-green.svg)](https://shields.io/)
 
-A slideshow with *pizzazz!* Glideshow adds transitions to the slideshows labels to set it apart from conventional slideshows
+A slideshow with *pizzazz!* Glideshow adds transitions to the slideshows labels to set it apart from other conventional "boring" slideshows,
 
 
 ![video](https://user-images.githubusercontent.com/46480892/110444437-02edc300-80e3-11eb-839f-fff9f8638aa9.mov)
