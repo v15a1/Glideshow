@@ -75,9 +75,20 @@ The behaviour is configurable by the following properties
 | `pageIndicatorPosition` | Configures positon of the pge indicator |
 | `placeHolderImage` | Configures slide background placeholder if a URL is specified, else `nil` |
 
-### Work in Progress
+### Contributions
 
+A few issue to tackle
 - [x] Support for Network images
 - [ ] Multiple animations
+- [ ] Customizable label positionings
+- [ ] Code optimizations
 
+Steps to contribution:
+
+1. Fork the repo 
+2. Clone the project
+3. Make your changes
+4. Make a pull request
+
+If you have any question please feel free to open an issue
 
