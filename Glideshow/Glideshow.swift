@@ -573,6 +573,7 @@ extension Glideshow : UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.glideshowDidSelecteRowAt?(indexPath: indexPath, self)
+        let index = IndexPath(item: ((pageByMidSection) % items!.count), section: 0)
+        delegate?.glideshowDidSelecteRowAt?(indexPath: index, self)
     }
 }

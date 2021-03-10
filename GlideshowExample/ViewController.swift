@@ -34,8 +34,9 @@ class ViewController: UIViewController {
             GlideItem(caption : "Hello in Chinese",title : "你好", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", backgroundImage: #imageLiteral(resourceName: "image7")),
             GlideItem(caption : "Hello in Thai",title : "สวัสดี", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.", backgroundImage: #imageLiteral(resourceName: "image9"))
         ]
+        glideshow.delegate = self
         glideshow.isCircular = true
-        glideshow.placeHolderImage = #imageLiteral(resourceName: "placeholder")
+        glideshow.placeHolderImage = #imageLiteral(resourceName: "dish_default_image")
         glideshow.gradientColor =
             UIColor.black.withAlphaComponent(0.8)
         glideshow.captionFont = UIFont.systemFont(ofSize: 16, weight: .light)
@@ -55,5 +56,15 @@ class ViewController: UIViewController {
     @objc func goToSlide(){
         glideshow.jumpToSlide(3, true)
         
+    }
+}
+
+extension ViewController : GlideshowProtocol {
+    func glideshowDidSelecteRowAt(indexPath: IndexPath, _ glideshow: Glideshow) {
+        print(indexPath)
+    }
+    
+    func pageDidChange(_ glideshow: Glideshow, didChangePageTo page: Int) {
+        print(page)
     }
 }
