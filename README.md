@@ -78,6 +78,7 @@ The behaviour is configurable by the following properties
 ### Contributions
 
 A few issue to tackle
+- [ ] Pass slide data through delegates
 - [x] Support for Network images
 - [ ] Multiple animations
 - [ ] Customizable label positionings
