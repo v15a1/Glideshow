@@ -152,14 +152,14 @@ class GlideCell: UICollectionViewCell {
         }
     }
     
-    /// glide factor for the description lable. Default: 2
+    /// glide factor for the description lable. Default: 3
     public var descriptionGlideFactor : CGFloat = 3 {
         didSet{
             slideDescription.glideFactor = titleGlideFactor
         }
     }
     
-    /// glide factor for the title lable. Default: 2
+    /// glide factor for the title lable. Default: 1
     public var captionGlideFactor : CGFloat = 1 {
         didSet{
             slideCaption.glideFactor = titleGlideFactor
