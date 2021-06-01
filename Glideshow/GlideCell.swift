@@ -140,7 +140,7 @@ class GlideCell: UICollectionViewCell {
     }()
     
     /// Spacing between labels of the slide. Default value : 8
-    public var labelSpacing : CGFloat!
+    public var labelSpacing : CGFloat = 8
     
     /// Animateable GlideLabels for gliding
     public var animateableViews : [GlideLabel]?
