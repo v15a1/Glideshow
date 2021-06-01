@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         glideshow.titleFont = UIFont.systemFont(ofSize: 30, weight: .black)
         glideshow.gradientHeightFactor = 0.8
         glideshow.pageIndicatorPosition = .bottom
-        glideshow.interval = 5
+//        glideshow.interval = 5
         
         button.setTitle("Go to item number 3", for: .normal)
         button.addTarget(self, action: #selector(goToSlide), for: .touchUpInside)

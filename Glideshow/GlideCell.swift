@@ -68,6 +68,7 @@ class GlideCell: UICollectionViewCell {
     /// Slide caption GlideLabel
     public var slideCaption : GlideLabel = {
         let label = GlideLabel()
+        label.accessibilityIdentifier = "glide-show-slide-caption"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.numberOfLines = 0
@@ -78,6 +79,7 @@ class GlideCell: UICollectionViewCell {
     /// Slide title GlideLabel
     public var slideTitle : GlideLabel = {
         let label = GlideLabel()
+        label.accessibilityIdentifier = "glide-show-slide-title"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .black)
         label.textColor = .white
@@ -88,6 +90,7 @@ class GlideCell: UICollectionViewCell {
     /// Slide description GlideLabel
     public var slideDescription : GlideLabel = {
         let label = GlideLabel()
+        label.accessibilityIdentifier = "glide-show-slide-description"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.numberOfLines = 0
@@ -152,14 +155,14 @@ class GlideCell: UICollectionViewCell {
         }
     }
     
-    /// glide factor for the description lable. Default: 2
+    /// glide factor for the description lable. Default: 3
     public var descriptionGlideFactor : CGFloat = 3 {
         didSet{
             slideDescription.glideFactor = titleGlideFactor
         }
     }
     
-    /// glide factor for the title lable. Default: 2
+    /// glide factor for the title lable. Default: 1
     public var captionGlideFactor : CGFloat = 1 {
         didSet{
             slideCaption.glideFactor = titleGlideFactor
@@ -170,6 +173,7 @@ class GlideCell: UICollectionViewCell {
     /// lazy property to prevent initialization if provided image is empty
     public lazy var imageView : UIImageView = {
        let imgView = UIImageView()
+        imgView.accessibilityIdentifier = "glide-show-image-view"
         imgView.contentMode = .scaleAspectFill
         return imgView
     }()
