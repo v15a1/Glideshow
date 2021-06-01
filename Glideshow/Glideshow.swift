@@ -7,6 +7,13 @@
 
 import UIKit
 
+/*
+ Magic number used to prevent the users from reaching the end of the slideshow. This was all for the purpose
+ of giving the user the "feeling" of an infinitely swiping slideshow to each side, where in reality they aren't.
+ The slideshow will reset to the initial position when they stop swiping and when the animations stop.
+ */
+fileprivate let kResetToOrigionalPositionMultiplier = 33
+
 @objc
 /// The delegate protocol that notifies slideshow state changes
 public protocol GlideshowProtocol : AnyObject {
@@ -316,7 +323,7 @@ public class Glideshow: UIView {
     ///   - animated: if `true` it animates the process of jumping
     public func jumpToSlide(_ slide : Int, _ animated : Bool = true){
         invalidateTimer()
-        let pageToJump = (33 * items!.count) + slide - 1
+        let pageToJump = (kResetToOrigionalPositionMultiplier * items!.count) + slide - 1
         if slide > items?.count ?? 0 {return}
         collectionView?.scrollToItem(at: IndexPath(item: pageToJump, section: 0), at: .right, animated: animated)
         setTimerIfNeeded()
@@ -384,7 +391,7 @@ public class Glideshow: UIView {
     func initializeCVPositionIfNeeded(){
         collectionView?.layoutIfNeeded()
         if items?.count != 0 && items != nil && isCircular{
-            collectionView?.scrollToItem(at: IndexPath(item: 33 * items!.count, section: 0), at: .right, animated: false)
+            collectionView?.scrollToItem(at: IndexPath(item: kResetToOrigionalPositionMultiplier * items!.count, section: 0), at: .right, animated: false)
         }
     }
     
@@ -446,10 +453,10 @@ public class Glideshow: UIView {
         currentIndex = Int((currentMidSectionCount).rounded())
         
         let realPage = (currentIndex % items!.count)
-        if (currentIndex < (33 * items!.count) - 5) || (currentIndex > (33 * items!.count) + 5) {
+        if (currentIndex < (kResetToOrigionalPositionMultiplier * items!.count) - 5) || (currentIndex > (kResetToOrigionalPositionMultiplier * items!.count) + 5) {
             collectionView?.scrollToItem(
                 at: IndexPath(
-                    item: (33 * items!.count ) + realPage,
+                    item: (kResetToOrigionalPositionMultiplier * items!.count ) + realPage,
                     section: 0
                 ),
                 at: .centeredVertically,
