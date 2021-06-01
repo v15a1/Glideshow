@@ -7,6 +7,9 @@
 
 import UIKit
 
+// Magic number used to give the user the feeling they are able to swipe infinitely
+fileprivate let kInifiniteSwipingMultiplier = 55
+
 @objc
 /// The delegate protocol that notifies slideshow state changes
 public protocol GlideshowProtocol : AnyObject {
@@ -463,7 +466,7 @@ public class Glideshow: UIView {
 extension Glideshow : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (items?.count ?? 0) * (isCircular ? 55 : 1)
+        return (items?.count ?? 0) * (isCircular ? kInifiniteSwipingMultiplier : 1)
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
