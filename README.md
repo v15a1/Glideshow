@@ -7,8 +7,7 @@
 
 A slideshow with *pizzazz!* Glideshow adds transitions to the slideshows labels to set it apart from other conventional "boring" slideshows,
 
-
-![video](https://user-images.githubusercontent.com/46480892/110444437-02edc300-80e3-11eb-839f-fff9f8638aa9.mov)
+![ezgif com-optimize](https://user-images.githubusercontent.com/46480892/128128971-f1dcb1bb-0339-448c-bd84-1f4f06213945.gif)
 
 ## Installation
 
