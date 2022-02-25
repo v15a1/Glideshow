@@ -111,4 +111,22 @@ class GlideshowTests: XCTestCase {
 
         XCTAssertEqual(glideshow.pageIndicator!.numberOfPages, 2)
     }
+    
+    func test_setDescriptionGlideFactor() throws {
+        let descriptionGlideFactor: CGFloat = 2.0
+        glideshow.descriptionGlideFactor = descriptionGlideFactor
+        XCTAssertEqual(glideshow.descriptionGlideFactor, descriptionGlideFactor)
+    }
+
+    func test_setTitleGlideFactor() throws {
+        let titleGlideFactor: CGFloat = 1.0
+        glideshow.titleGlideFactor = titleGlideFactor
+        XCTAssertEqual(glideshow.titleGlideFactor, titleGlideFactor)
+    }
+
+    func test_setCaptionGlideFactor() throws {
+        let captionGlideFactor: CGFloat = 3.0
+        glideshow.captionGlideFactor = captionGlideFactor
+        XCTAssertEqual(glideshow.captionGlideFactor, captionGlideFactor)
+    }
 }
